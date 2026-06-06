@@ -2,7 +2,7 @@
  * Slim consumer footer — single strip on desktop, wraps on mobile.
  * Ported visual parity from the legacy CRA Footer.jsx.
  */
-import { Mail, MapPin, Phone, Camera, Twitter, Facebook } from "lucide-react";
+import { Mail, MapPin, Phone, Camera, Globe, Heart } from "lucide-react";
 
 export function Footer({ topGap = true }: { topGap?: boolean }) {
   const year = new Date().getFullYear();
@@ -27,8 +27,8 @@ export function Footer({ topGap = true }: { topGap?: boolean }) {
         </div>
         <div className="flex items-center gap-2" data-testid="footer-social">
           <a href="#" aria-label="Instagram" className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#F59E0B] grid place-items-center transition"><Camera size={13} /></a>
-          <a href="#" aria-label="Twitter"   className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#F59E0B] grid place-items-center transition"><Twitter size={13} /></a>
-          <a href="#" aria-label="Facebook"  className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#F59E0B] grid place-items-center transition"><Facebook size={13} /></a>
+          <a href="#" aria-label="Twitter"   className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#F59E0B] grid place-items-center transition"><Globe size={13} /></a>
+          <a href="#" aria-label="Facebook"  className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#F59E0B] grid place-items-center transition"><Heart size={13} /></a>
         </div>
       </div>
       <div className="border-t border-white/10">
