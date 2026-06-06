@@ -2,7 +2,7 @@
  * Slim consumer footer — single strip on desktop, wraps on mobile.
  * Ported visual parity from the legacy CRA Footer.jsx.
  */
-import { Mail, MapPin, Phone, Instagram, Twitter, Facebook } from "lucide-react";
+import { Mail, MapPin, Phone, Twitter, Facebook } from "lucide-react";
 
 export function Footer({ topGap = true }: { topGap?: boolean }) {
   const year = new Date().getFullYear();
