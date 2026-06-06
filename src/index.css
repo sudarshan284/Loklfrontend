@@ -1,0 +1,111 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 38 50% 98%;            /* #FDFBF7 warm pearl */
+        --foreground: 0 0% 11%;              /* #1C1C1C */
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 11%;
+        --primary: 220 49% 20%;              /* #1A2B4C deep indigo */
+        --primary-foreground: 38 50% 98%;
+        --secondary: 38 40% 95%;
+        --secondary-foreground: 220 49% 20%;
+        --muted: 38 30% 94%;
+        --muted-foreground: 0 0% 35%;
+        --accent: 32 89% 48%;                /* #E68910 marigold */
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 36 18% 88%;                /* #E5E2DC */
+        --input: 36 18% 88%;
+        --ring: 220 49% 20%;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    html, body {
+        @apply bg-background text-foreground;
+        font-family: 'Satoshi', system-ui, sans-serif;
+        font-feature-settings: "ss01", "ss02";
+    }
+    h1, h2, h3, h4, .display {
+        font-family: 'Clash Display', 'Satoshi', sans-serif;
+        letter-spacing: -0.02em;
+    }
+}
+
+/* Lokl motif noise texture */
+.bf-noise {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+}
+
+.bf-glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40;
+}
+
+.bf-fadeup {
+    animation: fadeup 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeup {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+.bf-marquee { animation: marquee 30s linear infinite; }
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Lokl V2 — homepage redesign */
+.v2-pop-in {
+    animation: v2-pop-in 0.18s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes v2-pop-in {
+    from { opacity: 0; transform: scale(0.6); }
+    to { opacity: 1; transform: scale(1); }
+}
+.v2-shimmer {
+    background: linear-gradient(90deg, #F1F5F9 0%, #E2E8F0 50%, #F1F5F9 100%);
+    background-size: 200% 100%;
+    animation: v2-shimmer 1.4s ease-in-out infinite;
+}
+@keyframes v2-shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+}
+.v2-ticker { animation: v2-ticker 8s linear infinite; }
+@keyframes v2-ticker {
+    0%, 28% { transform: translateY(0); }
+    33%, 61% { transform: translateY(-100%); }
+    66%, 94% { transform: translateY(-200%); }
+    100% { transform: translateY(-300%); }
+}
+.line-clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+[data-debug-wrapper="true"] { display: contents !important; }
+[data-debug-wrapper="true"] > * {
+    margin-left: inherit; margin-right: inherit;
+    margin-top: inherit; margin-bottom: inherit;
+    padding-left: inherit; padding-right: inherit;
+    padding-top: inherit; padding-bottom: inherit;
+    column-gap: inherit; row-gap: inherit; gap: inherit;
+    border-left-width: inherit; border-right-width: inherit;
+    border-top-width: inherit; border-bottom-width: inherit;
+    border-left-style: inherit; border-right-style: inherit;
+    border-top-style: inherit; border-bottom-style: inherit;
+    border-left-color: inherit; border-right-color: inherit;
+    border-top-color: inherit; border-bottom-color: inherit;
+}
